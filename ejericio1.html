@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejericio1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="wrap">
+        <form action="" name="formulario" class="formulario">
+            <div class="radio">
+                <h1>Ejercicio Numero 1 de condicionanles</h1><br>
+                <h3>¿Eres bellisimo/a?</h3><br>                
+                <input type="radio" name="respuesta" id="si" value="si">
+                <label for="si">Si soy bellisimo</label>
+                <input type="radio" name="respuesta" id="no" value="no">
+                <label for="no">No soy bellisimo</label>
+                <input class="btn btn-primary bt-lg" type="button" value="Enviar" onclick="ejercicio1(this.form)">
+                <br><br>
+                <h3 id="respuesta"></h3>
+                <hr>
+            |</div>
+        </form>
+    </div>
+    <script>
+        function ejercicio1(form){          
+            var respuesta="";  
+            if(form.respuesta.value=="si"){
+                document.getElementById('respuesta').innerHTML="Ciertamente";                
+            }
+            else if(form.respuesta.value="no") {
+                document.getElementById('respuesta').innerHTML="No te creo"
+            }
+            //duda como validar en caso de no responder y presionar el boton
+        }
+
+    </script>
+</body>
+</html>
