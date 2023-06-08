@@ -22,11 +22,12 @@ body{
     margin-bottom: 20px;
     margin-left: 20px;
 }
-.formulario > dic{
+.formulario > div{
     padding: 20px 0;
     border-bottom: 1px solid #ccc;    
 }
-.formulario input[type="radio"]{
+.formulario input[type="radio"],
+.formulario input[type="checkbox"]{
     display: none;
 }
 .formulario .radio label,
@@ -75,4 +76,7 @@ body{
 .formulario input[type="radio"]:checked + label:before,
 .formulario input[type="checkbox"]:checked + label:before{
     display: none;
+}
+li{
+    list-style: none;
 }

@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <div class="wrap">
-        <h2>Ejercicio numero 5</h2>
-        <hr>
+    <header class="wrap p-3 mb-2 bg-primary text-white">
+        <h2>Ejericio numero 5 </h2><br>
+    </header>
+    <main class="wrap p-3 mb-2 bg-body-secondary text-black">       
         <form action="">
             <h3>Escribe un numero</h3>
             <input type="text" name="" id="numero1">
@@ -22,7 +23,11 @@
     
         </form>
         <h3 id="respuesta"></h3>           
-    </div>
+    </main>
+    <footer class="wrap p-3 mb-2 bg-info">
+        <h3>Realizado por DFG</h3>
+        <a href="index.html" class="btn btn-primary btn-lg" data-bs-toggle="button">Salir</a>
+    </footer>
     <script>
         var respuesta="";
         function validar(){

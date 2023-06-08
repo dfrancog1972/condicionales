@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejericio1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <header class="wrap p-3 mb-2 bg-primary text-white">
+        <h1>Ejercicio Numero 9 de condicionanles</h1>
+    </header>
+    <main class="wrap p-3 mb-2 bg-body-secondary text-black">
+        <h3>Elige tu helado</h3><br>                
+        <form action="" name="formulario" class="formulario">
+            <div class="radio">
+                <br>
+                <input type="radio" name="respuesta" id="sintopping" value="sintopping">
+                <label for="sintopping">El helado sin topping</label>
+                <br>
+                <input type="radio" name="respuesta" id="oreo" value="oreo">
+                <label for="oreo">El topping de oreo</label>
+                <br>
+                <input type="radio" name="respuesta" id="kitkat" value="kitkat">
+                <label for="kitkat">El topping de kitkat</label>
+                <br>
+                <input type="radio" name="respuesta" id="brownie" value="brownie">
+                <label for="brownie">El topping de brownie</label>
+                <br>
+                <input class="btn btn-primary bt-lg" type="button" value="Enviar" onclick="ejercicio9(this.form)">                
+                <br><br>
+                <h3 id="respuesta"></h3>
+                <hr>
+            </div>
+        </form>
+    </main>
+    <footer class="wrap p-3 mb-2 bg-info">
+        <h3>Realizado por DFG</h3>
+        <a href="index.html" class="btn btn-primary btn-lg" data-bs-toggle="button">Salir</a>
+    </footer>
+    <script>
+        function ejercicio9(form){          
+            var respuesta="";  
+            if(form.respuesta.value =="sintopping"){
+                document.getElementById('respuesta').innerHTML="El costo es de $50.00";                
+            }
+            else if(form.respuesta.value=="oreo") {
+                document.getElementById('respuesta').innerHTML="El costo es de $10.00";
+            }
+            else if(form.respuesta.value=="kitkat") {
+                document.getElementById('respuesta').innerHTML="El costo es de $15.00";
+            }
+            else {
+                document.getElementById('respuesta').innerHTML="El costo es de $20.00";
+            }
+            //duda como validar en caso de no responder y presionar el boton
+        }
+
+    </script>
+</body>
+</html>

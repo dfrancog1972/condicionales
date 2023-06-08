@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejericio7</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <header class="wrap p-3 mb-2 bg-primary text-white">
+        <h1>Ejercicio Numero 7 de condicionanles</h1>
+    </header>
+    <main class="wrap p-3 mb-2 bg-body-secondary text-black">
+        <form action="">
+            <h3>Escribe un numero</h3>
+            <input type="text" name="" id="numero1">
+            <input type="button" class="btn btn-primary btn-lg" value="Validar" id="bt1" onclick="validar()">
+        </form>
+        <h3 id="respuesta"></h3>  
+
+    </main>
+    <footer class="wrap p-3 mb-2 bg-info">
+        <h3>Realizado por DFG</h3>
+        <a href="index.html" class="btn btn-primary btn-lg" data-bs-toggle="button">Salir</a>
+    </footer>
+    <script>
+        var respuesta="";
+            function validar(){
+            var validacionNumero1 = parseInt(document.getElementById('numero1').value);            
+            switch(validacionNumero1){
+                case 1:
+                    document.getElementById('respuesta').innerHTML="El numero " + validacionNumero1 + " Corresponde al Lunes";                
+                break;
+                case 2:
+                    document.getElementById('respuesta').innerHTML="El numero " + validacionNumero1 + " Corresponde al Martes";                
+                break;
+                case 3:
+                    document.getElementById('respuesta').innerHTML="El numero " + validacionNumero1 + " Corresponde al Miercoles";                
+                break;
+                case 4:
+                    document.getElementById('respuesta').innerHTML="El numero " + validacionNumero1 + " Corresponde al Jueves";                
+                break;
+                case 5:
+                    document.getElementById('respuesta').innerHTML="El numero " + validacionNumero1 + " Corresponde al Viernes";                
+                break;
+                case 6:
+                    document.getElementById('respuesta').innerHTML="El numero " + validacionNumero1 + " Corresponde al Sabado";                
+                break;
+                case 7:
+                    document.getElementById('respuesta').innerHTML="El numero " + validacionNumero1 + " Corresponde al Domingo";                
+                break;
+                default:
+                document.getElementById('respuesta').innerHTML="El numero " + validacionNumero1 + " no corresponde a ningun dia de la semana";                
+                break;
+
+            }
+        }
+    </script>
+</body>
+</html>        
