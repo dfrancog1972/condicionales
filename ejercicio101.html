@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <input type="radio" name="rama" value="1"> Carrera
+    <input type="radio" name="rama" value="2"> Master
+    <input type="radio" name="rama2" value="3"> Ok
+    <input type="radio" name="rama2" value="4"> Beca Google
+    <input type="radio" name="rama2" value="5"> Beca Jesua
+    <h3 id="respuesta"></h3>
+</div>
+
+    <script>
+        var valor = '';
+        var valor2 ='';
+    $("input[name='rama']" ).on('change', function () {
+        valor = $(this).val();
+        if(valor==1)
+            document.getElementById('respuesta').innerHTML="El costo es de $3,999.00";  
+    });
+    $("input[name='rama2']" ).on('change', function () {
+        valor = $(this).val();
+        if(valor==3)
+            document.getElementById('respuesta').innerHTML="Con descuento el costo es de $3,199.20";  
+    });
+    </script>
+</body>
+</html>
