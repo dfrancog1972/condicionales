@@ -10,17 +10,29 @@
 </head>
 <body>
     <header class="wrap p-3 mb-2 bg-primary text-white">
-        <h2>Ejericio numero 2 </h2><br>
+        <h2>Ejericio numero 11 </h2><br>
     </header>
     <main class="wrap p-3 mb-2 bg-body-secondary text-black">
-        
-        <form action="">
-            <h3>Escribe un numero</h3>
-            <input type="text" name="" id="numero">
-            <input type="button" class="btn btn-primary btn-lg" value="Validar" id="bt1" onclick="divisor()">
-    
+        <form id="elementos" class="formulario">
+            <div class="radio">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <input type="radio" name="rama" id="coche" value="1">
+                <label for="coche">Coche</label>
+                <br>
+                <input type="radio" name="rama" id="moto" value="2">
+                <label for="moto">Moto</label>
+                <br>
+                <input type="radio" name="rama" id="autobus" value="3">
+                <label for="autobus">Autobus</label> 
+            </div>
+            <h3>¿Cuantos kilometros se recorrieron?</h3>
+            <input type="text" name="kilometros" id="Kilometros" value = "4">
+            <hr>                       
+            
         </form>
-        <h3 id="respuesta"></h3>   
+        <h3 id="respuesta"></h3>  
+        
+         
     </main>
     <footer class="wrap p-3 mb-2 bg-info">
         <h3>Realizado por DFG</h3>
@@ -28,17 +40,51 @@
     </footer>
     
     <script>
-        var respuesta="";
-        function divisor(){
-            var validacionNumero = parseInt(document.getElementById('numero').value);
-            if(validacionNumero%2){
-                document.getElementById('respuesta').innerHTML="El numero no es divisible entre 2";                
-            }
-            else{
-                document.getElementById('respuesta').innerHTML="El numero es divisible entre 2";                
-            }
+        var vehiculo = 0;
+        var totalaPagar = 0;
+        var costo = 0;
+        
+    $("input[name='rama']" ).on('change', function () {
+        valor = $(this).val();
+        if(valor==1){
+            costo = 0.2;
+            
+            totalaPagar = 
+            document.getElementById('respuesta').innerHTML= "El costo por mes sin descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
+            
         }
-    </script>
-    
+        else if(valor==2){
+            costoTotal=costoCarrera;
+            document.getElementById('respuesta').innerHTML="El costo por mes sin descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);   
+            document.getElementById('total').innerHTML="El costo total de la carrera sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 6);  
+        }            
+        else if(valor==3){
+            costoTotal=costoMaster;
+            document.getElementById('respuesta').innerHTML="El costo por mes sin descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
+            document.getElementById('total').innerHTML="El costo total del master sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 12);  
+        }        
+        $("input[name='rama2']" ).on('change', function () {
+                valor2 = $(this).val();
+                if(valor2==4){
+                    costoTotal=costoTotal * 0.8;
+                    document.getElementById('respuesta').innerHTML="El costo por mes con descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
+                    document.getElementById('total').innerHTML="El costo total del curso con beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 2);  
+                }
+                if(valor2==5){
+                    costoTotal=costoTotal * 0.85;
+                    document.getElementById('respuesta').innerHTML="El costo por mes con descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
+                    document.getElementById('total').innerHTML="El costo total de la carrera sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 6);  
+                }
+                if(valor2==6){
+                    costoTotal=costoTotal * 0.5;
+                    document.getElementById('respuesta').innerHTML="El costo por mes con descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
+                    document.getElementById('total').innerHTML="El costo total del master sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 12);  
+                }                    
+        });
+    });
+    //https://es.stackoverflow.com/questions/205681/guardar-value-de-un-input-radio-en-una-variable-de-javascript
+    //https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+    </script>    
 </body>
 </html>

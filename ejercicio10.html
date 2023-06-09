@@ -53,40 +53,45 @@
         var costoCarrera=3999;
         var costoMaster=2999;
         var costoTotal=0;
+        var texto = 'El costo por mes sin descuento es de ';
+        var texto2 = 'El costo total del curso sin beca es de ';
+        var texto3 = 'El costo por mes con descuento es de ';
+        var texto4 = 'El costo total del curso con beca es de ';
         //var cadena1=`El costo por mes sin descuento es de ${new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal)}`;
+        let pagar = (texto, carrera) => `${texto} ${new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(carrera)}`;
     $("input[name='rama']" ).on('change', function () {
         valor = $(this).val();
         if(valor==1){
             costoTotal=costoCourse;
-            document.getElementById('respuesta').innerHTML= "El costo por mes sin descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
-            document.getElementById('total').innerHTML="El costo total del curso sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 2);  
+            document.getElementById('respuesta').innerHTML= pagar(texto, costoTotal);  
+            document.getElementById('total').innerHTML=pagar(texto2, costoTotal*2);  
         }
         else if(valor==2){
             costoTotal=costoCarrera;
-            document.getElementById('respuesta').innerHTML="El costo por mes sin descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);   
-            document.getElementById('total').innerHTML="El costo total de la carrera sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 6);  
+            document.getElementById('respuesta').innerHTML=pagar(texto, costoTotal); 
+            document.getElementById('total').innerHTML=pagar(texto2, costoTotal*6);
         }            
         else if(valor==3){
             costoTotal=costoMaster;
-            document.getElementById('respuesta').innerHTML="El costo por mes sin descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
-            document.getElementById('total').innerHTML="El costo total del master sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 12);  
+            document.getElementById('respuesta').innerHTML=pagar(texto, costoTotal); 
+            document.getElementById('total').innerHTML=pagar(texto2, costoTotal*12);
         }        
         $("input[name='rama2']" ).on('change', function () {
                 valor2 = $(this).val();
                 if(valor2==4){
                     costoTotal=costoTotal * 0.8;
-                    document.getElementById('respuesta').innerHTML="El costo por mes con descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
-                    document.getElementById('total').innerHTML="El costo total del curso con beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 2);  
+                    document.getElementById('respuesta').innerHTML=pagar(texto3, costoTotal);
+                    document.getElementById('total').innerHTML=pagar(texto4, costoTotal*2);  
                 }
                 if(valor2==5){
                     costoTotal=costoTotal * 0.85;
-                    document.getElementById('respuesta').innerHTML="El costo por mes con descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
-                    document.getElementById('total').innerHTML="El costo total de la carrera sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 6);  
+                    document.getElementById('respuesta').innerHTML=pagar(texto3, costoTotal);
+                    document.getElementById('total').innerHTML=pagar(texto4, costoTotal*6);  
                 }
                 if(valor2==6){
                     costoTotal=costoTotal * 0.5;
-                    document.getElementById('respuesta').innerHTML="El costo por mes con descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
-                    document.getElementById('total').innerHTML="El costo total del master sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 12);  
+                    document.getElementById('respuesta').innerHTML=pagar(texto3, costoTotal);
+                    document.getElementById('total').innerHTML=pagar(texto4, costoTotal*12);  
                 }                    
         });
     });

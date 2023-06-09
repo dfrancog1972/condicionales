@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*const texto1 ="El costo por mes sin descuento es de ";
+        const carrera=3999;
+        const costoTotal = function(texto1, new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal));
+        console.log(costoTotal);*/
+        function saludar(nombre){
+            return 'hola ' + nombre;
+        }
+        console.log(saludar('Daniel'));
+        
+        //paso a monedas
+        
+        
+        const carrera = 2999;
+        const texto = 'tienes que pagar';
+        let costoTotal = (texto, carrera) => `${texto} ${new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(carrera)}`;
+        console.log(costoTotal(texto, carrera));
+
+
+        let saludo = (nombre) => 'Saludos ' + nombre;
+        console.log(saludo('Denial'));
+        
+        
+
+    </script>
+</body>
+</html>
+
