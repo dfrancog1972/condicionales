@@ -21,24 +21,25 @@
                 <label for="carrera">Carrera</label>
                 <br>
                 <input type="radio" name="respuesta" id="master" value="master">
-                <label for="master">Master</label>
-                
+                <label for="master">Master</label> 
             </div>
+            <h3 id="respuesta"></h3>
             <div class="checkbox">
-                <h3>Cuantas con alguna beca</h3>
                 <br>
-                <input type="checkbox" name="respuesta" id="ok" value="ok">
-                <label for="ok">ok</label>
+                <input type="checkbox" name="respuesta2" id="ok" value="ok">
+                <label for="ok">Ok</label>
                 <br>
-                <input type="checkbox" name="respuesta" id="google" value="google">
-                <label for="master">Beca Google</label>
+                <input type="checkbox" name="respuesta2" id="google" value="google">
+                <label for="google">Beca Google</label>
                 <br>
-                <input type="checkbox" name="respuesta" id="jesua" value="jesua">
+                <input type="checkbox" name="respuesta2" id="jesua" value="jesua">
                 <label for="jesua">Beca Jesua</label>
-                <br>                
-                <input class="btn btn-primary bt-lg" type="button" value="Enviar" onclick="ejercicio10(this.form)">                
+                <h3 id="respuesta2"></h3>
+                <br><br>                         
+                <input class="btn btn-primary bt-lg" type="submit" value="Enviar" >                
                 <br><br>              
             </div>
+            
             <h3 id="respuesta"></h3>
         </form>    
     </main>
@@ -47,12 +48,24 @@
         <a href="index.html" class="btn btn-primary btn-lg" data-bs-toggle="button">Salir</a>
     </footer>
     <script>
-        function ejercicio10(form){          
+        var formulario = document.querySelector('form')
+        //console.log(formulario);
+        formulario.addEventListener('submit', (event)=>{
+            event.preventDefault()
+            console.log(event)
+        });
+        /*function ejercicio10(form){          
             var respuesta="";  
-            var costo=0;
+            var respuesta2="";
+            var costo=0;            
             if(form.respuesta.value =="carrera"){
                 document.getElementById('respuesta').innerHTML="El costo es de $3,999.00";                
                 costo=3999;
+                if(form.respuesta2.value=='ok'){
+                    alert('hola');
+                    costo=3999*1.8;
+                    document.getElementById('respuesta2').innerHTML="El costo con descuento es de $" + costo;                
+                }
                 
             }
             else if(form.respuesta.value=="master") {
@@ -60,10 +73,9 @@
                 costo=2999;
                 
                 }
-            }
-            
+            }            
             //duda como validar en caso de no responder y presionar el boton
-        
+            */
 
     </script>
 </body>
