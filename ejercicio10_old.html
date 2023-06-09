@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejericio10</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <header class="wrap p-3 mb-2 bg-primary text-white">
+        <h1>Ejercicio Numero 10 de condicionanles</h1>
+    </header>
+    <main class="wrap p-3 mb-2 bg-body-secondary text-black">
+        <h3>Elige que deseas estudiar</h3><br>                
+        <form id="elementos" class="formulario">
+            <div class="radio">
+                <br>
+                <input type="radio" name="respuesta" id="carrera" value="carrera">
+                <label for="carrera">Carrera</label>
+                <br>
+                <input type="radio" name="respuesta" id="master" value="master">
+                <label for="master">Master</label> 
+            </div>
+            <h3 id="respuesta"></h3>
+            <div class="checkbox">
+                <br>
+                <input type="checkbox" name="respuesta2" id="ok" value="ok">
+                <label for="ok">Ok</label>
+                <br>
+                <input type="checkbox" name="respuesta2" id="google" value="google">
+                <label for="google">Beca Google</label>
+                <br>
+                <input type="checkbox" name="respuesta2" id="jesua" value="jesua">
+                <label for="jesua">Beca Jesua</label>
+                <h3 id="respuesta2"></h3>
+                <br><br>                         
+                <input class="btn btn-primary bt-lg" type="submit" value="Enviar" >                
+                <br><br>              
+            </div>
+            
+            <h3 id="respuesta2"></h3>
+        </form>    
+    </main>
+    <footer class="wrap p-3 mb-2 bg-info">
+        <h3>Realizado por DFG</h3>
+        <a href="index.html" class="btn btn-primary btn-lg" data-bs-toggle="button">Salir</a>
+    </footer>
+    <script>
+        window.onload = () => {
+            console.log("DOM cargado");
+
+            const formNode = document.getElementById("formulario");
+            formNode.addEventListener("submit", (ev) =>
+            {
+                ev.preventDefault();
+                console.log("Evento submit capturado");
+
+                const carrera = document.getElementById("apellido").value;
+                const master   = document.getElementById("edad").value;
+                const ok = document.getElementById("nombre").value;
+
+                console.log("El nombre es: " + carrera|);
+                console.log("El apellido es: " + master);
+                console.log("La edad es: " + ok);
+            })
+        };
+        //console.log(formulario);
+        
+        /*function ejercicio10(form){          
+            var respuesta="";  
+            var respuesta2="";
+            var costo=0;            
+            if(form.respuesta.value =="carrera"){
+                document.getElementById('respuesta').innerHTML="El costo es de $3,999.00";                
+                costo=3999;
+                if(form.respuesta2.value=='ok'){
+                    alert('hola');
+                    costo=3999*1.8;
+                    document.getElementById('respuesta2').innerHTML="El costo con descuento es de $" + costo;                
+                }
+                
+            }
+            else if(form.respuesta.value=="master") {
+                document.getElementById('respuesta').innerHTML="El costo es de $2,999.00";
+                costo=2999;
+                
+                }
+            }            
+            //duda como validar en caso de no responder y presionar el boton
+            */
+
+    </script>
+</body>
+</html>

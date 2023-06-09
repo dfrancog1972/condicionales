@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejericio10</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
@@ -16,81 +16,83 @@
         <h3>Elige que deseas estudiar</h3><br>                
         <form id="elementos" class="formulario">
             <div class="radio">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <input type="radio" name="rama" id="course" value="1">
+                <label for="course">Course</label>
                 <br>
-                <input type="radio" name="respuesta" id="carrera" value="carrera">
+                <input type="radio" name="rama" id="carrera" value="2">
                 <label for="carrera">Carrera</label>
                 <br>
-                <input type="radio" name="respuesta" id="master" value="master">
+                <input type="radio" name="rama" id="master" value="3">
                 <label for="master">Master</label> 
+                <br>
+                <hr>
+                <h3>Tienes algun tipo de beca</h3>
+                <input type="radio" name="rama2" id="ok" value="4">
+                <label for="ok">Ok</label> 
+                <br>
+                <input type="radio" name="rama2" id="google" value="5">
+                <label for="google">Beca Google</label> 
+                <br>
+                <input type="radio" name="rama2" id="jesua" value="6">
+                <label for="jesua">Beca Jesua</label>                 
+                <hr>
+                <h3 id="respuesta"></h3>
+                <hr>
+                <h3 id="total"></h3>
             </div>
-            <h3 id="respuesta"></h3>
-            <div class="checkbox">
-                <br>
-                <input type="checkbox" name="respuesta2" id="ok" value="ok">
-                <label for="ok">Ok</label>
-                <br>
-                <input type="checkbox" name="respuesta2" id="google" value="google">
-                <label for="google">Beca Google</label>
-                <br>
-                <input type="checkbox" name="respuesta2" id="jesua" value="jesua">
-                <label for="jesua">Beca Jesua</label>
-                <h3 id="respuesta2"></h3>
-                <br><br>                         
-                <input class="btn btn-primary bt-lg" type="submit" value="Enviar" >                
-                <br><br>              
-            </div>
-            
-            <h3 id="respuesta2"></h3>
-        </form>    
-    </main>
-    <footer class="wrap p-3 mb-2 bg-info">
-        <h3>Realizado por DFG</h3>
-        <a href="index.html" class="btn btn-primary btn-lg" data-bs-toggle="button">Salir</a>
-    </footer>
+        </main>
+        <footer class="wrap p-3 mb-2 bg-info">
+            <h3>Realizado por DFG</h3>
+            <a href="index.html" class="btn btn-primary btn-lg" data-bs-toggle="button">Salir</a>
+        </footer>    
     <script>
-        window.onload = () => {
-            console.log("DOM cargado");
-
-            const formNode = document.getElementById("formulario");
-            formNode.addEventListener("submit", (ev) =>
-            {
-                ev.preventDefault();
-                console.log("Evento submit capturado");
-
-                const carrera = document.getElementById("apellido").value;
-                const master   = document.getElementById("edad").value;
-                const ok = document.getElementById("nombre").value;
-
-                console.log("El nombre es: " + carrera|);
-                console.log("El apellido es: " + master);
-                console.log("La edad es: " + ok);
-            })
-        };
-        //console.log(formulario);
-        
-        /*function ejercicio10(form){          
-            var respuesta="";  
-            var respuesta2="";
-            var costo=0;            
-            if(form.respuesta.value =="carrera"){
-                document.getElementById('respuesta').innerHTML="El costo es de $3,999.00";                
-                costo=3999;
-                if(form.respuesta2.value=='ok'){
-                    alert('hola');
-                    costo=3999*1.8;
-                    document.getElementById('respuesta2').innerHTML="El costo con descuento es de $" + costo;                
+        var valor = '';
+        var valor2 ='';
+        var costoCourse=4999;
+        var costoCarrera=3999;
+        var costoMaster=2999;
+        var costoTotal=0;
+        //var cadena1=`El costo por mes sin descuento es de ${new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal)}`;
+    $("input[name='rama']" ).on('change', function () {
+        valor = $(this).val();
+        if(valor==1){
+            costoTotal=costoCourse;
+            document.getElementById('respuesta').innerHTML= "El costo por mes sin descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
+            document.getElementById('total').innerHTML="El costo total del curso sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 2);  
+        }
+        else if(valor==2){
+            costoTotal=costoCarrera;
+            document.getElementById('respuesta').innerHTML="El costo por mes sin descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);   
+            document.getElementById('total').innerHTML="El costo total de la carrera sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 6);  
+        }            
+        else if(valor==3){
+            costoTotal=costoMaster;
+            document.getElementById('respuesta').innerHTML="El costo por mes sin descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
+            document.getElementById('total').innerHTML="El costo total del master sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 12);  
+        }        
+        $("input[name='rama2']" ).on('change', function () {
+                valor2 = $(this).val();
+                if(valor2==4){
+                    costoTotal=costoTotal * 0.8;
+                    document.getElementById('respuesta').innerHTML="El costo por mes con descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
+                    document.getElementById('total').innerHTML="El costo total del curso con beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 2);  
                 }
-                
-            }
-            else if(form.respuesta.value=="master") {
-                document.getElementById('respuesta').innerHTML="El costo es de $2,999.00";
-                costo=2999;
-                
+                if(valor2==5){
+                    costoTotal=costoTotal * 0.85;
+                    document.getElementById('respuesta').innerHTML="El costo por mes con descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
+                    document.getElementById('total').innerHTML="El costo total de la carrera sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 6);  
                 }
-            }            
-            //duda como validar en caso de no responder y presionar el boton
-            */
-
-    </script>
+                if(valor2==6){
+                    costoTotal=costoTotal * 0.5;
+                    document.getElementById('respuesta').innerHTML="El costo por mes con descuento es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal);  
+                    document.getElementById('total').innerHTML="El costo total del master sin beca es de " + new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(costoTotal * 12);  
+                }                    
+        });
+    });
+    //https://es.stackoverflow.com/questions/205681/guardar-value-de-un-input-radio-en-una-variable-de-javascript
+    //https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+    </script>    
 </body>
 </html>
