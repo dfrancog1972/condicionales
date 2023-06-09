@@ -1,0 +1,56 @@
+<!-- https://www.delftstack.com/es/howto/javascript/get-html-form-value/ -->
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form">
+        <select name="fruit" id="fruits">
+          <option value="0">Select Fruit</option>
+          <option value="mango">Mango</option>
+          <option value="apple">Apple</option>
+          <option value="orange">Orange</option>
+        </select>
+          <button type = "submit">Hit</button>
+        </form>
+          <p id="print"></p>
+          <script>
+            var form = document.forms['form'];
+            form.onsubmit = function(e){
+            e.preventDefault();
+            var select = document.form.fruit.value;
+            console.log(select);
+            document.getElementById('print').innerHTML=select.toUpperCase();
+        }
+          </script>
+            
+</body>
+</html>
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <form name="form" id="forms">
+  Enter name: &nbsp; 
+<input type="text" id="name">
+  <input type="button" value=" Click Up">
+ </form>
+  <p id="print"></p>
+  <script>
+    var form = document.getElementById("forms");
+form.onclick = function(e){
+  e.preventDefault();
+var name = document.getElementById("name").value;
+  console.log(name);
+document.getElementById('print').innerHTML=name.toUpperCase();
+}
+  </script>
+</body>
+</html>
